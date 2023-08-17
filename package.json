@@ -15,6 +15,7 @@
     "@oneblink/release-cli": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
+    "@vercel/ncc": "^0.36.1",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
@@ -22,6 +23,10 @@
     "fixpack": "^4.0.0",
     "prettier": "^3.0.2",
     "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": "^16",
+    "npm": "^8"
   },
   "homepage": "https://github.com/oneblink/github-actions#readme",
   "keywords": [],
@@ -32,11 +37,9 @@
     "url": "git+https://github.com/oneblink/github-actions.git"
   },
   "scripts": {
-    "build": "tsc --build",
     "eslint": "eslint --fix --cache .",
     "fixpack": "fixpack",
-    "prepare": "npm run build",
-    "prerelease": "npm run build",
+    "prerelease": "ncc build ./parse-json-env-var/parse-json-env-var.ts -o ./parse-json-env-var",
     "release": "oneblink-release",
     "test": "npm run eslint && npm run typescript && npm run fixpack",
     "typescript": "tsc --noEmit"

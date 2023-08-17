@@ -22,7 +22,9 @@ try {
     }
 
     // Export variable
-    core.info(`Injecting "${envName}" as environment variable with value: ${envValue}`)
+    core.info(
+      `Injecting "${envName}" as environment variable with value: ${envValue}`,
+    )
     core.exportVariable(envName, envValue)
   }
 } catch (error) {

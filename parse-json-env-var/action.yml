@@ -9,4 +9,4 @@ inputs:
     required: false
 runs:
   using: 'node16'
-  main: './parse-json-env-var.js'
+  main: './index.js'
