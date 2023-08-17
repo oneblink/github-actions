@@ -2727,15 +2727,35 @@ exports["default"] = _default;
 
 "use strict";
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const core_1 = __importDefault(__nccwpck_require__(186));
+const core = __importStar(__nccwpck_require__(186));
 try {
     // `var` input defined in action metadata file
-    const variable = core_1.default.getInput('var');
-    const isSecret = core_1.default.getBooleanInput('is-secret');
+    const variable = core.getInput('var');
+    const isSecret = core.getBooleanInput('is-secret');
     const obj = JSON.parse(variable);
     for (const entry in Object.entries(obj)) {
         const [envName, envValue] = entry;
@@ -2745,21 +2765,21 @@ try {
         }
         // Inject a single secret
         if (isSecret) {
-            core_1.default.debug(`Setting "${envName}" as secret.`);
-            core_1.default.setSecret(envValue);
+            core.debug(`Setting "${envName}" as secret.`);
+            core.setSecret(envValue);
         }
         // Export variable
-        core_1.default.info(`Injecting "${envName}" as environment variable with value: ${envValue}`);
-        core_1.default.exportVariable(envName, envValue);
+        core.info(`Injecting "${envName}" as environment variable with value: ${envValue}`);
+        core.exportVariable(envName, envValue);
     }
 }
 catch (error) {
     console.error(error);
     if (error instanceof Error) {
-        core_1.default.setFailed(error.message);
+        core.setFailed(error.message);
     }
     else {
-        core_1.default.setFailed('Unknown error has occurred, checking logging above');
+        core.setFailed('Unknown error has occurred, checking logging above');
     }
 }
 
