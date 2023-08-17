@@ -4,12 +4,9 @@ inputs:
   variable:
     description: 'The stringified JSON to parse'
     required: true
-  var:
-    description: 'The stringified JSON to parse'
-    required: true
-outputs:
-  time:
-    description: 'The time the variable was parsed'
+  is-secret:
+    description: 'Set to true to have the environment variables be treated as secrets and hidden from output logs'
+    required: false
 runs:
   using: 'node18'
   main: './parse-json-env-var.js'
