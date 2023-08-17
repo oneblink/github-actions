@@ -2,7 +2,7 @@ import * as core from '@actions/core'
 
 try {
   // `var` input defined in action metadata file
-  const variable = core.getInput('var')
+  const variable = core.getInput('variable')
   const isSecret = core.getBooleanInput('is-secret')
   const obj: Record<string, string> = JSON.parse(variable)
   for (const entry in Object.entries(obj)) {

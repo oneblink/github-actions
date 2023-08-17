@@ -2754,7 +2754,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(186));
 try {
     // `var` input defined in action metadata file
-    const variable = core.getInput('var');
+    const variable = core.getInput('variable');
     const isSecret = core.getBooleanInput('is-secret');
     const obj = JSON.parse(variable);
     for (const entry in Object.entries(obj)) {
