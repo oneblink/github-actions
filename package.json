@@ -1,7 +1,7 @@
 {
   "name": "github-actions",
   "description": "Common GitHub actions that can be used for CI",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0",
   "author": "",
   "bugs": {
     "url": "https://github.com/oneblink/github-actions/issues"
@@ -42,7 +42,7 @@
     "eslint": "eslint --fix --cache .",
     "fixpack": "fixpack",
     "prerelease": "npm run build",
-    "release": "oneblink-release",
+    "release": "oneblink-release --no-name",
     "test": "npm run eslint && npm run typescript && npm run fixpack",
     "typescript": "tsc --noEmit"
   }
