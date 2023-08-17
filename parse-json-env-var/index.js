@@ -2757,8 +2757,7 @@ try {
     const variable = core.getInput('variable');
     const isSecret = core.getBooleanInput('is-secret');
     const obj = JSON.parse(variable);
-    for (const entry in Object.entries(obj)) {
-        const [envName, envValue] = entry;
+    for (const [envName, envValue] of Object.entries(obj)) {
         // Fail the action if this variable name is already in use
         if (process.env[envName]) {
             throw new Error(`The environment name "${envName}" is already in use. Please use an alias to ensure that each secret has a unique environment name`);

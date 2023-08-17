@@ -5,9 +5,7 @@ try {
   const variable = core.getInput('variable')
   const isSecret = core.getBooleanInput('is-secret')
   const obj: Record<string, string> = JSON.parse(variable)
-  for (const entry in Object.entries(obj)) {
-    const [envName, envValue] = entry
-
+  for (const [envName, envValue] of Object.entries(obj)) {
     // Fail the action if this variable name is already in use
     if (process.env[envName]) {
       throw new Error(
