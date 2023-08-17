@@ -1,7 +1,7 @@
 {
   "name": "github-actions",
   "description": "Common GitHub actions that can be used for CI",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "author": "",
   "bugs": {
     "url": "https://github.com/oneblink/github-actions/issues"
