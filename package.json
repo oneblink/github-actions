@@ -1,7 +1,7 @@
 {
   "name": "github-actions",
   "description": "Common GitHub actions that can be used for CI",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0-beta.5",
   "author": "",
   "bugs": {
     "url": "https://github.com/oneblink/github-actions/issues"
@@ -37,9 +37,11 @@
     "url": "git+https://github.com/oneblink/github-actions.git"
   },
   "scripts": {
+    "build": "npm run build:parse-json-env-var",
+    "build:parse-json-env-var": "ncc build ./parse-json-env-var/parse-json-env-var.ts -o ./parse-json-env-var",
     "eslint": "eslint --fix --cache .",
     "fixpack": "fixpack",
-    "prerelease": "ncc build ./parse-json-env-var/parse-json-env-var.ts -o ./parse-json-env-var",
+    "prerelease": "npm run build",
     "release": "oneblink-release",
     "test": "npm run eslint && npm run typescript && npm run fixpack",
     "typescript": "tsc --noEmit"
