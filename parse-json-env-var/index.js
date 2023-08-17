@@ -2755,9 +2755,11 @@ const core = __importStar(__nccwpck_require__(186));
 try {
     // `var` input defined in action metadata file
     const variable = core.getInput('variable');
+    const prefix = core.getInput('prefix');
     const isSecret = core.getBooleanInput('is-secret');
     const obj = JSON.parse(variable);
-    for (const [envName, envValue] of Object.entries(obj)) {
+    for (const [partialEnvName, envValue] of Object.entries(obj)) {
+        const envName = `${prefix || ''}${partialEnvName}`;
         // Fail the action if this variable name is already in use
         if (process.env[envName]) {
             throw new Error(`The environment name "${envName}" is already in use. Please use an alias to ensure that each secret has a unique environment name`);

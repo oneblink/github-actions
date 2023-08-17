@@ -3,9 +3,12 @@ import * as core from '@actions/core'
 try {
   // `var` input defined in action metadata file
   const variable = core.getInput('variable')
+  const prefix = core.getInput('prefix')
   const isSecret = core.getBooleanInput('is-secret')
   const obj: Record<string, string> = JSON.parse(variable)
-  for (const [envName, envValue] of Object.entries(obj)) {
+  for (const [partialEnvName, envValue] of Object.entries(obj)) {
+    const envName = `${prefix || ''}${partialEnvName}`
+
     // Fail the action if this variable name is already in use
     if (process.env[envName]) {
       throw new Error(

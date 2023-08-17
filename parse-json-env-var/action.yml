@@ -4,6 +4,9 @@ inputs:
   variable:
     description: 'The stringified JSON to parse'
     required: true
+  prefix:
+    description: 'A prefix that can be added to the key of each environment variable'
+    required: false
   is-secret:
     description: 'Set to true to have the environment variables be treated as secrets and hidden from output logs'
     required: false
