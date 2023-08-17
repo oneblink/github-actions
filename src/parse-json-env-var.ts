@@ -1,5 +1,4 @@
 import core from '@actions/core'
-import github from '@actions/github'
 
 try {
   // `var` input defined in action metadata file
