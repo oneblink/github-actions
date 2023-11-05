@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **[BREAKING]** from NodeJS 16 to 20
+
 ## [1.0.0] - 2023-08-17
 
 ### Initial Release
