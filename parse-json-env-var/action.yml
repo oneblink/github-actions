@@ -11,5 +11,5 @@ inputs:
     description: 'Set to true to have the environment variables be treated as secrets and hidden from output logs'
     required: false
 runs:
-  using: 'node16'
+  using: 'node20'
   main: './index.js'

@@ -7,22 +7,22 @@
     "url": "https://github.com/oneblink/github-actions/issues"
   },
   "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@actions/github": "^5.1.1"
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0"
   },
   "devDependencies": {
     "@microsoft/eslint-plugin-sdl": "^0.2.0",
-    "@oneblink/release-cli": "^2.0.3",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.0",
-    "@vercel/ncc": "^0.36.1",
-    "eslint": "^8.47.0",
+    "@oneblink/release-cli": "^2.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "@vercel/ncc": "^0.38.1",
+    "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
     "fixpack": "^4.0.0",
-    "prettier": "^3.0.2",
-    "typescript": "^5.1.6"
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   },
   "engines": {
     "node": "^16",
